@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <title> Dashboard</title>
 </head>
 
@@ -22,24 +23,24 @@
     <div class="card col-12 col-md-3">
         <h2 class="card-header">Search for a City:</h2>
         <form id="user-form" class="card-body d-grid gap-2">
-            <input name="cityName" id="cityName" type="text" autofocus="true" class="form-input" placeholder="Enter City Name" />
+            <input name="cityNameInput" id="cityNameInput" type="text" autofocus="true" class="form-input" placeholder="Enter City Name" />
             <button type="submit" class="btn btn-primary btn-lg">Search</button>
         </form>
-        <div class="card col-12 col-md-12">
-            <button class="btn btn-primary btn-lg cityButton" id="Atlanta">Atlanta</button>
-            <button class="btn btn-primary btn-lg cityButton" id="Denver">Denver</button>
-            <button class="btn btn-primary btn-lg cityButton" id="Seattle">Seattle</button>
-            <button class="btn btn-primary btn-lg cityButton" id="San Francisco">San Francisco</button>
-            <button class="btn btn-primary btn-lg cityButton" id="Orlando">Orlando</button>
-            <button class="btn btn-primary btn-lg cityButton" id="New York">New York</button>
-            <button class="btn btn-primary btn-lg cityButton" id="Chicago">Chicago</button>
-            <button class="btn btn-primary btn-lg cityButton" id="Austin">Austin</button>
+        <div class="city-button-container card col-12 col-md-12">
+            <button class="btn btn-primary btn-lg cityButton" id="city1" city="Atlanta">Atlanta</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city2" city="Denver">Denver</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city3" city="Seattle">Seattle</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city4" city="San Francisco">San Francisco</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city5" city="Orlando">Orlando</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city6" city="New York">New York</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city7" city="Chicago">Chicago</button>
+            <button class="btn btn-primary btn-lg cityButton" id="city8" city="Austin">Austin</button>
         </div>
     </div>
 
     <div class="col-12 col-md-9" >
         <div class="containerCityCurrentConditions col-10">
-            <h3 class="cityName">Atlana</h3>
+            <h3 ><span class="cityName">Atlanta</span></h3>
             <p id="currentTemp">
                 Temp: 76.62F
             </p>
@@ -56,35 +57,35 @@
             <div class="containerForecastCards col-12 flex-row">
                 <div class="card col-12 col-md-2 card-forecast flex-column p-2"> 
                     <p class="forecastData" id="day1Date">9/14/2022 </p>
-                    <p class="forecastData" id="day1Icon">INSERT ICON </p>
+                    <p class="forecastData" id="day1Icon"> </p>
                     <p class="forecastData" id="day1Temp">Temp: 83.55F </p>
                     <p class="forecastData" id="day1Wind">Wind: 3.94 MPH </p>
                     <p class="forecastData" id="day1Humidity">Humidity: 63% </p>
                 </div>
                 <div class="card col-12 col-md-2 card-forecast flex-column p-2"> 
                     <p class="forecastData" id="day2Date">9/14/2022 </p>
-                    <p class="forecastData" id="day2Icon">INSERT ICON </p>
+                    <p class="forecastData" id="day2Icon"> </p>
                     <p class="forecastData" id="day2Temp">Temp: 83.55F </p>
                     <p class="forecastData" id="day2Wind">Wind: 3.94 MPH </p>
                     <p class="forecastData" id="day2Humidity">Humidity: 63% </p>
                 </div>
                 <div class="card col-12 col-md-2 card-forecast flex-column p-2"> 
                     <p class="forecastData" id="day3Date">9/14/2022 </p>
-                    <p class="forecastData" id="day3Icon">INSERT ICON </p>
+                    <p class="forecastData" id="day3Icon"> </p>
                     <p class="forecastData" id="day3Temp">Temp: 83.55F </p>
                     <p class="forecastData" id="day3Wind">Wind: 3.94 MPH </p>
                     <p class="forecastData" id="day3Humidity">Humidity: 63% </p>
                 </div>
                 <div class="card col-12 col-md-2 card-forecast flex-column p-2"> 
                     <p class="forecastData" id="day4Date">9/14/2022 </p>
-                    <p class="forecastData" id="day4Icon">INSERT ICON </p>
+                    <p class="forecastData" id="day4Icon"> </p>
                     <p class="forecastData" id="day4Temp">Temp: 83.55F </p>
                     <p class="forecastData" id="day4Wind">Wind: 3.94 MPH </p>
                     <p class="forecastData" id="day4Humidity">Humidity: 63% </p>
                 </div>
                 <div class="card col-12 col-md-2 card-forecast flex-column p-2"> 
                     <p class="forecastData" id="day5Date">9/14/2022 </p>
-                    <p class="forecastData" id="day5Icon">INSERT ICON </p>
+                    <p class="forecastData" id="day5Icon"> </p>
                     <p class="forecastData" id="day5Temp">Temp: 83.55F </p>
                     <p class="forecastData" id="day5Wind">Wind: 3.94 MPH </p>
                     <p class="forecastData" id="day5Humidity">Humidity: 63% </p>
