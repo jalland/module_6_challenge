@@ -2,7 +2,7 @@
 
 ## Description
 
-This dashboard displays the current weather and 5-day forecast for a city that a user types in to the search bar. After the user types in the city, the weather data is displayed, and the city is added to the list of buttons of the "city search history". A user can either input a new city or click on a button of a previously-searched city to display weather data for the city they want. 
+This dashboard displays the current weather and 5-day forecast for a city that a user types in to the search bar. After the user types in the city, the weather data is displayed, and the city is added to the list of buttons of the "city search history". A user can either input a new city or click on a button of a previously-searched city to display weather data for the city they want.
 
 ## Deployed Application
 

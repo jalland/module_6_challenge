@@ -45,16 +45,13 @@ var city8El = document.querySelector('#city8');
 //If a valid city name, change all the history buttons, call "getCityData"
 var formSubmitHandler = function (event) {
     event.preventDefault();
-    console.log(event)
     var city = nameInputEl.value;
-    console.log(city)
     var apiUrlLatLon = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+apiKey
     fetch(apiUrlLatLon).then(function (response) {
-        console.log(response)
     if (response.ok){
         getCityData(city);
 
-        //Edit all the buttons
+        //Edit all the history buttons
         city8El.setAttribute('city',city7El.textContent)
         city8El.textContent = city7El.textContent
         city7El.setAttribute('city',city6El.textContent)
@@ -70,16 +67,16 @@ var formSubmitHandler = function (event) {
         city2El.setAttribute('city',city1El.textContent)
         city2El.textContent = city1El.textContent
         city1El.setAttribute('city',city)
-    city1El.textContent = city
+        city1El.textContent = city
 
-    localStorage.setItem('city1', city1El.textContent)
-    localStorage.setItem('city2', city2El.textContent)
-    localStorage.setItem('city3', city3El.textContent)
-    localStorage.setItem('city4', city4El.textContent)
-    localStorage.setItem('city5', city5El.textContent)
-    localStorage.setItem('city6', city6El.textContent)
-    localStorage.setItem('city7', city7El.textContent)
-    localStorage.setItem('city8', city8El.textContent)
+        localStorage.setItem('city1', city1El.textContent)
+        localStorage.setItem('city2', city2El.textContent)
+        localStorage.setItem('city3', city3El.textContent)
+        localStorage.setItem('city4', city4El.textContent)
+        localStorage.setItem('city5', city5El.textContent)
+        localStorage.setItem('city6', city6El.textContent)
+        localStorage.setItem('city7', city7El.textContent)
+        localStorage.setItem('city8', city8El.textContent)
     } 
     else {
       alert('Please enter a valid city name');
@@ -145,7 +142,6 @@ var displayCurrentCityData = function (data) {
 
 //Displays the forecast weather data. 
 var displayForecastCityData = function (data) {
-    console.log(data)
     currentTime = dayjs()
     currentTime = dayjs(currentTime).format('M/D/YYYY HH')
     time1Day = dayjs().add(1, 'day')
@@ -180,7 +176,6 @@ var displayForecastCityData = function (data) {
     for(i=0;i<data.list.length;i++){
         time = data.list[i].dt_txt
         if(dayjs(time).format("M") === dayjs(time2Day).format("M") && dayjs(time).format("D") === dayjs(time2Day).format("D") && dayjs(time).format("H") === "21"){
-            console.log("HIT")
             day2DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
             day2Humidity = data.list[i].main.humidity+"%"
@@ -202,7 +197,6 @@ var displayForecastCityData = function (data) {
     for(i=0;i<data.list.length;i++){
         time = data.list[i].dt_txt
         if(dayjs(time).format("M") === dayjs(time3Day).format("M") && dayjs(time).format("D") === dayjs(time3Day).format("D") && dayjs(time).format("H") === "21"){
-            console.log("HIT")
             day3DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
             day3Humidity = data.list[i].main.humidity+"%"
@@ -224,7 +218,6 @@ var displayForecastCityData = function (data) {
     for(i=0;i<data.list.length;i++){
     time = data.list[i].dt_txt
     if(dayjs(time).format("M") === dayjs(time4Day).format("M") && dayjs(time).format("D") === dayjs(time4Day).format("D") && dayjs(time).format("H") === "21"){
-        console.log("HIT")
         day4DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
         day4Humidity = data.list[i].main.humidity+"%"
@@ -277,8 +270,6 @@ for (let i = 1; i <= 8; i++) {
       cityEl.textContent = storedCity;
       cityEl.setAttribute('city',cityEl.textContent)
       if(i===1){
-          console.log("YES")
-          console.log(storedCity)
         getCityData(storedCity)
       }
     }
