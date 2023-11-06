@@ -8,6 +8,7 @@ This dashboard displays the current weather and 5-day forecast for a city that a
 https://jalland.github.io/module_6_challenge/
 
 ## Screenshot
+![Screen Shot 2023-11-05 at 10 11 52 PM](https://github.com/jalland/module_6_challenge/assets/15932648/a70801dc-b813-42ce-96bb-74ca370ed879)
 
 
 
