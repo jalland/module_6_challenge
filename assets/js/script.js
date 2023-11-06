@@ -153,19 +153,19 @@ var displayForecastCityData = function (data) {
     //Day 1 Forecast
     for(i=0;i<data.list.length;i++){
         time = data.list[i].dt_txt
-        if(dayjs(time).format("M") === dayjs(time1Day).format("M") && dayjs(time).format("D") === dayjs(time1Day).format("D") && dayjs(time).format("H") === "21"){
+        if(dayjs(time).format("M") === dayjs(time1Day).format("M") && dayjs(time).format("D") === dayjs(time1Day).format("D") && dayjs(time).format("H") === "18"){
             day1DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
-            day1Humidity = data.list[0].main.humidity+"%"
-            day1Temp = data.list[0].main.temp.toFixed(2)+"F"
-            day1WindSpeed = data.list[0].wind.speed+" MPH"
-            day1Icon = data.list[0].weather[0].icon
+            day1Humidity = data.list[i].main.humidity+"%"
+            day1Temp = data.list[i].main.temp.toFixed(2)+"F"
+            day1WindSpeed = data.list[i].wind.speed+" MPH"
+            day1Icon = data.list[i].weather[0].icon
         
             icon = document.createElement("img")
             icon.setAttribute("src","https://openweathermap.org/img/wn/"+day1Icon+".png")
             day1IconEl.textContent = ""
             day1IconEl.append(icon)
-                
+
             day1TempEl.textContent = "Temp: "+day1Temp
             day1WindEl.textContent = "Wind: "+day1WindSpeed
             day1HumidityEl.textContent = "Humidity: "+day1Humidity
@@ -175,7 +175,7 @@ var displayForecastCityData = function (data) {
     //Day 2 Forecast
     for(i=0;i<data.list.length;i++){
         time = data.list[i].dt_txt
-        if(dayjs(time).format("M") === dayjs(time2Day).format("M") && dayjs(time).format("D") === dayjs(time2Day).format("D") && dayjs(time).format("H") === "21"){
+        if(dayjs(time).format("M") === dayjs(time2Day).format("M") && dayjs(time).format("D") === dayjs(time2Day).format("D") && dayjs(time).format("H") === "18"){
             day2DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
             day2Humidity = data.list[i].main.humidity+"%"
@@ -196,7 +196,7 @@ var displayForecastCityData = function (data) {
     //Day 3 Forecast
     for(i=0;i<data.list.length;i++){
         time = data.list[i].dt_txt
-        if(dayjs(time).format("M") === dayjs(time3Day).format("M") && dayjs(time).format("D") === dayjs(time3Day).format("D") && dayjs(time).format("H") === "21"){
+        if(dayjs(time).format("M") === dayjs(time3Day).format("M") && dayjs(time).format("D") === dayjs(time3Day).format("D") && dayjs(time).format("H") === "18"){
             day3DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
             day3Humidity = data.list[i].main.humidity+"%"
@@ -217,7 +217,7 @@ var displayForecastCityData = function (data) {
     //Day 4 Forecast
     for(i=0;i<data.list.length;i++){
     time = data.list[i].dt_txt
-    if(dayjs(time).format("M") === dayjs(time4Day).format("M") && dayjs(time).format("D") === dayjs(time4Day).format("D") && dayjs(time).format("H") === "21"){
+    if(dayjs(time).format("M") === dayjs(time4Day).format("M") && dayjs(time).format("D") === dayjs(time4Day).format("D") && dayjs(time).format("H") === "18"){
         day4DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
         day4Humidity = data.list[i].main.humidity+"%"
@@ -239,8 +239,7 @@ var displayForecastCityData = function (data) {
     //Day 5 Forecast
     for(i=0;i<data.list.length;i++){
     time = data.list[i].dt_txt
-    if(dayjs(time).format("M") === dayjs(time5Day).format("M") && dayjs(time).format("D") === dayjs(time5Day).format("D") && dayjs(time).format("H") === "21"){
-        console.log("HIT")
+    if(dayjs(time).format("M") === dayjs(time5Day).format("M") && dayjs(time).format("D") === dayjs(time5Day).format("D") && dayjs(time).format("H") === "18"){
         day5DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
         day5Humidity = data.list[i].main.humidity+"%"
