@@ -239,6 +239,27 @@ var displayForecastCityData = function (data) {
     //Day 5 Forecast
     for(i=0;i<data.list.length;i++){
     time = data.list[i].dt_txt
+    console.log(data)
+    //First do at final hour in array (to ensure data is displayed even if hour 18 is not available.
+    if(dayjs(time).format("M") === dayjs(time5Day).format("M") && dayjs(time).format("D") === dayjs(time5Day).format("D") && dayjs(time).format("H") === "12"){
+        day5DateEl.textContent = dayjs(time).format("M/D/YYYY")
+
+        day5Humidity = data.list[i].main.humidity+"%"
+        day5Temp = data.list[i].main.temp.toFixed(2)+"F"
+        day5WindSpeed = data.list[i].wind.speed+" MPH"
+        day5Icon = data.list[i].weather[0].icon
+
+        icon = document.createElement("img")
+        icon.setAttribute("src","https://openweathermap.org/img/wn/"+day5Icon+".png")
+        day5IconEl.textContent = ""
+        day5IconEl.append(icon)
+
+        day5TempEl.textContent = "Temp: "+day5Temp
+        day5WindEl.textContent = "Wind: "+day5WindSpeed
+        day5HumidityEl.textContent = "Humidity: "+day5Humidity
+    }
+
+    //Hour 18 (near the hottest time of day)
     if(dayjs(time).format("M") === dayjs(time5Day).format("M") && dayjs(time).format("D") === dayjs(time5Day).format("D") && dayjs(time).format("H") === "18"){
         day5DateEl.textContent = dayjs(time).format("M/D/YYYY")
 
